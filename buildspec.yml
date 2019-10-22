@@ -15,7 +15,7 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
-      - docker build -t $REPO:$VERSION
+      - docker build -t $REPO:$VERSION .
   post_build:
     comamnds:
       - docker push $REPO:$VERSION
