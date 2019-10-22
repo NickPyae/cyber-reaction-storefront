@@ -17,5 +17,7 @@ phases:
     commands:
       - docker build -t $REPO:$VERSION .
   post_build:
-    comamnds:
+    commands:
       - docker push $REPO:$VERSION
+      - cd scripts && sh create_td_update_service.sh
+
