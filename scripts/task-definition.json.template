@@ -132,8 +132,8 @@
         "logDriver": "awslogs",
         "options": {
           "awslogs-region": "ap-southeast-1",
-          "awslogs-stream-prefix": "ecs",
-          "awslogs-group": "/ecs/reaction-storefront"
+          "awslogs-stream-prefix": "reaction-storefront",
+          "awslogs-group": "/ecs/cyber-dev"
         }
       },
       "essential": true,
