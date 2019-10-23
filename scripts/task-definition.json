@@ -133,7 +133,7 @@
         "options": {
           "awslogs-region": "ap-southeast-1",
           "awslogs-stream-prefix": "ecs",
-          "awslogs-group": "/ecs/reaction-storefront"
+          "awslogs-group": "/ecs/cyber-dev/reaction-storefront"
         }
       },
       "essential": true,
