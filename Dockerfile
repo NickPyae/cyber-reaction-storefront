@@ -36,5 +36,6 @@ RUN yarn install --production=true --frozen-lockfile --ignore-scripts --non-inte
 # If any Node flags are needed, they can be set in the NODE_OPTIONS env variable.
 CMD ["tini", "--", "node", "."]
 LABEL com.reactioncommerce.name="example-storefront"
-ENTRYPOINT ["tini", "--", "/usr/local/src/app/bin/start"]
+# ENTRYPOINT ["tini", "--", "./bin/start"] Just for localhost development. Disable this line before pushing to CodeCommit.
+
 
