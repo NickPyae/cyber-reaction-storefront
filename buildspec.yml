@@ -1,0 +1,23 @@
+version: 0.2 
+# top comment 
+ 
+env: 
+  variables: 
+    REPO: "725812489091.dkr.ecr.ap-southeast-1.amazonaws.com/reaction-storefront" 
+    VERSION: "latest" 
+phases: 
+  install: 
+    runtime-versions: 
+      docker: 18  
+  pre_build: 
+    commands: 
+      - echo Logging in to Amazon ECR... 
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - docker build -t $REPO:$VERSION .
+  post_build:
+    commands:
+      - docker push $REPO:$VERSION
+      - cd scripts && sh create_td_update_service.sh
+

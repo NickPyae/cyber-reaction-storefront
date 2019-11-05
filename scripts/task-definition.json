@@ -1,0 +1,143 @@
+{
+  "memory": "2048",
+  "networkMode": "awsvpc",
+  "family": "reaction-storefront",
+  "placementConstraints": [],
+  "cpu": "1024",
+  "executionRoleArn": "arn:aws:iam::725812489091:role/ecsTaskExecutionRole",
+  "volumes": [
+    {
+      "host": {},
+      "name": "web-yarn"
+    },
+    {
+      "host": {},
+      "name": "node_modules"
+    },
+    {
+      "host": {},
+      "name": "empty_node_modules"
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "taskRoleArn": "arn:aws:iam::725812489091:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "environment": [
+        {
+          "name": "CANONICAL_URL",
+          "value": "https://cyber.test.firemark.cloud:4000"
+        },
+        {
+          "name": "ENABLE_SPA_ROUTING",
+          "value": "true"
+        },
+        {
+          "name": "EXTERNAL_GRAPHQL_URL",
+          "value": "https://cyber.test.firemark.cloud:3000/graphql-beta"
+        },
+        {
+          "name": "INTERNAL_GRAPHQL_URL",
+          "value": "https://cyber.test.firemark.cloud:3000/graphql-beta"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "OAUTH2_ADMIN_PORT",
+          "value": "4445"
+        },
+        {
+          "name": "OAUTH2_AUTH_URL",
+          "value": "https://cyber.test.firemark.cloud:4444/oauth2/auth"
+        },
+        {
+          "name": "OAUTH2_CLIENT_ID",
+          "value": "storefront-client"
+        },
+        {
+          "name": "OAUTH2_CLIENT_SECRET",
+          "value": "CHANGEME"
+        },
+        {
+          "name": "OAUTH2_HOST",
+          "value": "https://cyber.test.firemark.cloud"
+        },
+        {
+          "name": "OAUTH2_IDP_HOST_URL",
+          "value": "https://cyber.test.firemark.cloud:3000/"
+        },
+        {
+          "name": "OAUTH2_REDIRECT_URL",
+          "value": "https://cyber.test.firemark.cloud:4000/callback"
+        },
+        {
+          "name": "OAUTH2_TOKEN_URL",
+          "value": "https://cyber.test.firemark.cloud:4444/oauth2/token"
+        },
+        {
+          "name": "PORT",
+          "value": "4000"
+        },
+        {
+          "name": "SEGMENT_ANALYTICS_SKIP_MINIMIZE",
+          "value": "true"
+        },
+        {
+          "name": "SEGMENT_ANALYTICS_WRITE_KEY",
+          "value": "ENTER_KEY_HERE"
+        },
+        {
+          "name": "SESSION_MAX_AGE_MS",
+          "value": "2592000000"
+        },
+        {
+          "name": "SESSION_SECRET",
+          "value": "CHANGEME"
+        },
+        {
+          "name": "STRIPE_PUBLIC_API_KEY",
+          "value": "ENTER_STRIPE_PUBLIC_KEY_HERE"
+        }
+        
+      ],
+      "name": "reaction-storefront",
+      "mountPoints": [
+        {
+          "sourceVolume": "empty_node_modules",
+          "containerPath": "/usr/local/src/reaction-app/node_modules"
+        },
+        {
+          "sourceVolume": "node_modules",
+          "containerPath": "/usr/local/src/node_modules"
+        },
+        {
+          "sourceVolume": "web-yarn",
+          "containerPath": "/home/node/.cache/yarn"
+        }
+      ],
+      "image": "725812489091.dkr.ecr.ap-southeast-1.amazonaws.com/reaction-storefront:latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 4000,
+          "hostPort": 4000
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-group": "/ecs/cyber-dev/reaction-storefront"
+        }
+      },
+      "essential": true,
+      "volumesFrom": []
+    }
+  ]
+}

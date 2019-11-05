@@ -8,7 +8,8 @@ IFS="$(printf "\n\t")"
 
 cd "$(dirname "$0")/.."
 yarn install
+yarn build
 printf "Creating hydra client…"
 ./bin/wait-for.sh "${OAUTH2_HOST}:${OAUTH2_ADMIN_PORT}"
 ./bin/create-hydra-client.js
-yarn dev
+yarn start
