@@ -31,9 +31,9 @@ class Questionnaire extends Component {
 
   renderQuestionnaire = () => (
     <Fragment>
-      <div id="surveyhero-embed-e0bba1ff">
+      <div id="surveyhero-embed-557f1bd8">
         <Head>
-          <script type="text/javascript" src="https://embed-cdn.surveyhero.com/js/user/embed.e0bba1ff.js" />
+          <script src="https://embed-cdn.surveyhero.com/js/user/embed.557f1bd8.js" />
         </Head>
       </div>
     </Fragment>
