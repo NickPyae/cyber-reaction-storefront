@@ -44,7 +44,7 @@ class Layout extends Component {
           <main className={classes.main}>
             <article className={classes.article}>{children}</article>
           </main>
-          <Footer />
+          <Footer shop={shop} />
         </div>
       </React.Fragment>
     );

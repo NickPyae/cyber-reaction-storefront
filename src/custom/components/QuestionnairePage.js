@@ -12,7 +12,7 @@ const QuestionnairePage = ({ customStyles }) => (
 
 QuestionnairePage.propTypes = {
   classes: PropTypes.object,
-  customStyles: PropTypes.object
+  customStyles: PropTypes.string
 };
 
 export default QuestionnairePage;

@@ -17,13 +17,14 @@ const styles = (theme) => ({
 const Footer = ({ ...props }) => (
   <footer className={props.classes.footer}>
     <Typography variant="caption">
-      &copy; {date.getFullYear()} NewCo
+      &copy; {date.getFullYear()} { props.shop.name }
     </Typography>
   </footer>
 );
 
 Footer.propTypes = {
-  classes: PropTypes.object
+  classes: PropTypes.object,
+  shop: PropTypes.object
 };
 
 export default withStyles(styles, { name: "SkFooter" })(Footer);
