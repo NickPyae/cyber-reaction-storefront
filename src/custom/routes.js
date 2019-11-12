@@ -5,7 +5,9 @@
  */
 function defineRoutes(routes) {
   routes
-    .add("home", "/", "questionnaire") // name - pattern - page
+    .add("home", "/", "about") // name - pattern - page
+    .add("questionnaire", "/questionnaire", "questionnaire")
+    .add("rating", "/rating", "rating")
     .add("productGrid", "/productGrid", "productGrid")
     .add("cart", "/cart", "cart")
     .add("checkout", "/cart/checkout", "checkout")
