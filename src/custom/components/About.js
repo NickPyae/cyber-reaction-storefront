@@ -9,6 +9,18 @@ import { FlashOnOutlined, GroupOutlined, SettingsOutlined } from "@material-ui/i
 import { Router } from "routes";
 
 const styles = (theme) => ({
+  pangolinImage: {
+    width: "100%",
+    height: "auto",
+    maxWidth: 500,
+    maxHeight: 500,
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+  },
+  sceneryImage: {
+    width: "100%",
+    height: "auto",
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+  },
   aboutCard: {
     backgroundColor: theme.palette.reaction.forestGreen300
   },
@@ -32,7 +44,7 @@ class About extends Component {
     goToQuestionnaire = () => Router.pushRoute("questionnaire");
 
     render() {
-      const { classes: { aboutCard, exploreButton, infoCard, textColor } } = this.props;
+      const { classes: { pangolinImage, sceneryImage, aboutCard, exploreButton, infoCard, textColor } } = this.props;
 
       return (
         <Grid container
@@ -41,21 +53,19 @@ class About extends Component {
           alignItems="center"
           spacing="24"
         >
-          <Grid item>
-            <h4>
-              <img src="http://31.media.tumblr.com/tumblr_lw2lhqjrel1qfmi03o9_r1_500.gif" alt="profile" className="circle responsive-img" />
-            </h4>
+          <Grid item xs>
+            <img src="/static/images/pangolin.jpg" alt="pangolin" className={pangolinImage} />
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <Card>
               <CardContent className={aboutCard}>
                 <Typography gutterBottom className={textColor}>
-                I am a person who likes to always experiment with many technologies, learn more, and with every mistake made it is the best to improve learning and designs, since nobody is born knowing...
+                Pangolins have no teeth; instead they rely on a gizzard-like stomach that is adapted for grinding food. Pangolins use their scales as tools for self-defense. If threatened, the pangolin will perform a cutting motion with its scales if anything is inserted between them—that's a nasty shock for a strange paw or snout!
                 </Typography>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <Grid container direction="row" justify="center" spacing="24">
               <Grid item xs>
                 <Card>
@@ -128,17 +138,17 @@ class About extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid item xs>
             <Card onClick={this.goToQuestionnaire}>
               <CardContent className={exploreButton}>
                 <Typography gutterBottom className={textColor}>
-                Click here to explore your journey
+                Click here to explore your cyber journey
                 </Typography>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item>
-            <img src="http://materializecss.com/templates/parallax-template/background3.jpg" alt="template" />
+          <Grid item xs>
+            <img src="/static/images/scenery.jpg" alt="scenery" className={sceneryImage} />
           </Grid>
         </Grid>
       );

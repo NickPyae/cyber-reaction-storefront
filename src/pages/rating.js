@@ -13,7 +13,6 @@ const styles = () => ({
 @observer
 class RatingPage extends Component {
     static propTypes = {
-      classes: PropTypes.object,
       routingStore: PropTypes.object,
       shop: PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -22,7 +21,7 @@ class RatingPage extends Component {
     };
 
     render() {
-      const { shop, classes } = this.props;
+      const { shop } = this.props;
 
       return (
         <Fragment>
