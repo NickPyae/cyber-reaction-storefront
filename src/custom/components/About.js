@@ -51,7 +51,7 @@ class About extends Component {
           direction="column"
           justify="center"
           alignItems="center"
-          spacing="24"
+          spacing={24}
         >
           <Grid item xs>
             <img src="/static/images/pangolin.jpg" alt="pangolin" className={pangolinImage} />
@@ -66,12 +66,12 @@ class About extends Component {
             </Card>
           </Grid>
           <Grid item xs>
-            <Grid container direction="row" justify="center" spacing="24">
+            <Grid container direction="row" justify="center" spacing={24}>
               <Grid item xs>
                 <Card>
                   <CardContent className={infoCard}>
                     <Grid container direction="column" justify="center"
-                      alignItems="center" spacing="24"
+                      alignItems="center" spacing={24}
                     >
                       <Grid item>
                         <FlashOnOutlined style={{ fontSize: 120 }} className={textColor}/>
@@ -94,7 +94,7 @@ class About extends Component {
                 <Card>
                   <CardContent className={infoCard}>
                     <Grid container direction="column" justify="center"
-                      alignItems="center" spacing="24"
+                      alignItems="center" spacing={24}
                     >
                       <Grid item>
                         <GroupOutlined style={{ fontSize: 120 }} className={textColor}/>
@@ -117,7 +117,7 @@ class About extends Component {
                 <Card>
                   <CardContent className={infoCard}>
                     <Grid container direction="column" justify="center"
-                      alignItems="center" spacing="24"
+                      alignItems="center" spacing={24}
                     >
                       <Grid item>
                         <SettingsOutlined style={{ fontSize: 120 }} className={textColor}/>
