@@ -5,7 +5,9 @@ import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { FlashOnOutlined, GroupOutlined, SettingsOutlined } from "@material-ui/icons";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
+import PanoramaWideAngleIcon from "@material-ui/icons/PanoramaWideAngle";
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import { Router } from "routes";
 
 const styles = (theme) => ({
@@ -74,16 +76,16 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <FlashOnOutlined style={{ fontSize: 120 }} className={textColor}/>
+                        <WhatshotIcon style={{ fontSize: 120 }} className={textColor}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
-                    Accelerate Development
+                        Why Pangolin
                         </Typography>
                       </Grid>
                       <Grid item>
                         <Typography className={textColor} paragraph>
-                    We did most of the heavy work for you to provide default styles that incorporate our custom components. In addition, we refine animations and transitions to provide a smoother experience for developers. Better developer experience.
+                        Pangolins are found throughout South-East Asia and are the only mammals wholly-covered in scales and they use those scales to protect themselves from predators in the wild. If under threat, a pangolin will immediately curl into a tight ball and will use their sharp-scaled tails to defend themselves.
                         </Typography>
                       </Grid>
                     </Grid>
@@ -97,16 +99,16 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <GroupOutlined style={{ fontSize: 120 }} className={textColor}/>
+                        <PanoramaWideAngleIcon style={{ fontSize: 120 }} className={textColor}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
-                        User Focused
+                        Why we think this name is perfect for who we are and what we are trying to achieve
                         </Typography>
                       </Grid>
                       <Grid item>
                         <Typography className={textColor} paragraph>
-                        Through the use of elements and principles of Material Design, we have been able to create a framework that incorporates components and animations that provide more information to users. In addition, a single underlying response system on all platforms.
+                        Pangolins, like our target customers, are small but have a strong defence against attackers. Like our new company, they are native to South-East Asia. As an endangered species, they still need help even with their natural defences.
                         </Typography>
                       </Grid>
                     </Grid>
@@ -120,16 +122,16 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <SettingsOutlined style={{ fontSize: 120 }} className={textColor}/>
+                        <AttachMoneyIcon style={{ fontSize: 120 }} className={textColor}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
-                        Easy to work
+                        What else
                         </Typography>
                       </Grid>
                       <Grid item>
                         <Typography className={textColor} paragraph>
-                        We have provided detailed documentation, as well as specific code examples to help new users get started. We are also always open to comments and can answer any questions a user may have about Materialize.
+                        We would like to donate a small sum of money to the protection of Pangolins as part of our Corporate Social Responsibility strategy.
                         </Typography>
                       </Grid>
                     </Grid>
