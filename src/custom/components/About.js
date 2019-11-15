@@ -33,9 +33,12 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.reaction.forestGreen300,
     height: "100%"
   },
-  textColor: {
+  contextText: {
     color: "white",
     fontStyle: "italic"
+  },
+  textColor: {
+    color: "white"
   }
 });
 
@@ -48,7 +51,10 @@ class About extends Component {
     goToQuestionnaire = () => Router.pushRoute("questionnaire");
 
     render() {
-      const { classes: { pangolinImage, sceneryImage, aboutCard, exploreButton, infoCard, textColor } } = this.props;
+      const {
+        classes:
+        { pangolinImage, sceneryImage, aboutCard, exploreButton, infoCard, contextText, textColor }
+      } = this.props;
 
       return (
         <Grid container
@@ -63,7 +69,7 @@ class About extends Component {
           <Grid item xs>
             <Card>
               <CardContent className={aboutCard}>
-                <Typography gutterBottom className={textColor}>
+                <Typography gutterBottom className={contextText}>
                   <q>
                     Pangolins have no teeth; instead they rely on a gizzard-like stomach that is adapted for grinding food. Pangolins use their scales as tools for self-defense. If threatened, the pangolin will perform a cutting motion with its scales if anything is inserted between them—that's a nasty shock for a strange paw or snout!
                   </q>
@@ -80,7 +86,7 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <WhatshotIcon style={{ fontSize: 120 }} className={textColor}/>
+                        <WhatshotIcon style={{ fontSize: 120 }} className={contextText}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
@@ -88,7 +94,7 @@ class About extends Component {
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography className={textColor} paragraph>
+                        <Typography className={contextText} paragraph>
                         Pangolins are found throughout South-East Asia and are the only mammals wholly-covered in scales and they use those scales to protect themselves from predators in the wild. If under threat, a pangolin will immediately curl into a tight ball and will use their sharp-scaled tails to defend themselves.
                         </Typography>
                       </Grid>
@@ -103,7 +109,7 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <PanoramaWideAngleIcon style={{ fontSize: 120 }} className={textColor}/>
+                        <PanoramaWideAngleIcon style={{ fontSize: 120 }} className={contextText}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
@@ -111,7 +117,7 @@ class About extends Component {
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography className={textColor} paragraph>
+                        <Typography className={contextText} paragraph>
                         Pangolins, like our target customers, are small but have a strong defence against attackers. Like our new company, they are native to South-East Asia. As an endangered species, they still need help even with their natural defences.
                         </Typography>
                       </Grid>
@@ -126,7 +132,7 @@ class About extends Component {
                       alignItems="center" spacing={24}
                     >
                       <Grid item>
-                        <AttachMoneyIcon style={{ fontSize: 120 }} className={textColor}/>
+                        <AttachMoneyIcon style={{ fontSize: 120 }} className={contextText}/>
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
@@ -134,7 +140,7 @@ class About extends Component {
                         </Typography>
                       </Grid>
                       <Grid item>
-                        <Typography className={textColor} paragraph>
+                        <Typography className={contextText} paragraph>
                         We would like to donate a small sum of money to the protection of Pangolins as part of our Corporate Social Responsibility strategy.
                         </Typography>
                       </Grid>
