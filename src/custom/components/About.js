@@ -30,7 +30,8 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.reaction.reactionBlue
   },
   infoCard: {
-    backgroundColor: theme.palette.reaction.darkBlue500
+    backgroundColor: theme.palette.reaction.darkBlue500,
+    height: "100%"
   },
   textColor: {
     color: "white"
@@ -70,8 +71,8 @@ class About extends Component {
           <Grid item xs>
             <Grid container direction="row" justify="center" spacing={24}>
               <Grid item xs>
-                <Card>
-                  <CardContent className={infoCard}>
+                <Card className={infoCard}>
+                  <CardContent>
                     <Grid container direction="column" justify="center"
                       alignItems="center" spacing={24}
                     >
@@ -93,8 +94,8 @@ class About extends Component {
                 </Card>
               </Grid>
               <Grid item xs>
-                <Card>
-                  <CardContent className={infoCard}>
+                <Card className={infoCard}>
+                  <CardContent>
                     <Grid container direction="column" justify="center"
                       alignItems="center" spacing={24}
                     >
@@ -116,8 +117,8 @@ class About extends Component {
                 </Card>
               </Grid>
               <Grid item xs>
-                <Card>
-                  <CardContent className={infoCard}>
+                <Card className={infoCard}>
+                  <CardContent>
                     <Grid container direction="column" justify="center"
                       alignItems="center" spacing={24}
                     >
