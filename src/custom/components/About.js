@@ -30,11 +30,12 @@ const styles = (theme) => ({
     backgroundColor: theme.palette.reaction.reactionBlue
   },
   infoCard: {
-    backgroundColor: theme.palette.reaction.darkBlue500,
+    backgroundColor: theme.palette.reaction.forestGreen300,
     height: "100%"
   },
   textColor: {
-    color: "white"
+    color: "white",
+    fontStyle: "italic"
   }
 });
 
@@ -63,7 +64,9 @@ class About extends Component {
             <Card>
               <CardContent className={aboutCard}>
                 <Typography gutterBottom className={textColor}>
-                Pangolins have no teeth; instead they rely on a gizzard-like stomach that is adapted for grinding food. Pangolins use their scales as tools for self-defense. If threatened, the pangolin will perform a cutting motion with its scales if anything is inserted between them—that's a nasty shock for a strange paw or snout!
+                  <q>
+                    Pangolins have no teeth; instead they rely on a gizzard-like stomach that is adapted for grinding food. Pangolins use their scales as tools for self-defense. If threatened, the pangolin will perform a cutting motion with its scales if anything is inserted between them—that's a nasty shock for a strange paw or snout!
+                  </q>
                 </Typography>
               </CardContent>
             </Card>

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { observer, inject } from "mobx-react";
 import Helmet from "react-helmet";
 import Head from "next/head";
+import PageLoading from "components/PageLoading";
 import Questionnaire from "../custom/components/Questionnaire";
 
 const styles = () => ({
@@ -28,6 +29,18 @@ class QuestionnairePage extends Component {
     })
   };
 
+  state = {
+    isLoading: true
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState(() => ({
+        isLoading: false
+      }));
+    }, 2000);
+  }
+
   renderQuestionnaire = () => (
     <Fragment>
       <div id="surveyhero-embed-557f1bd8">
@@ -40,6 +53,8 @@ class QuestionnairePage extends Component {
 
   render() {
     const { shop, classes } = this.props;
+
+    if (this.state.isLoading) return <PageLoading message="Loading questionnaires..." />;
 
     return (
       <Fragment>
