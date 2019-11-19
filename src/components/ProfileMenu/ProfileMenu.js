@@ -39,7 +39,7 @@ class ProfileMenu extends Component {
     const { classes, router: { asPath } } = this.props;
 
     const menuItems = [
-      {
+   {
         href: "/profile/address",
         route: "/profile/address",
         label: "Address Book",
@@ -52,16 +52,22 @@ class ProfileMenu extends Component {
         isSelected: asPath.includes("/profile/orders")
       },
       {
+        href: "/profile/rating",
+        route: "/profile/rating",
         label: "Risk Rating",
-        isSelected: asPath === "/profile/rating"
+        isSelected: asPath.includes("/profile/rating")
       },
       {
+        href: "/profile/report",
+        route: "/profile/report",
         label: "Risk Report",
-        isSelected: asPath === "/profile/report"
+        isSelected: asPath.includes("/profile/report")
       },
       {
+        href: "/profile/claims",
+        route: "/profile/claims",
         label: "Claims",
-        isSelected: asPath === "/profile/claims"
+        isSelected: asPath.includes("/profile/claims")
       }
     ];
 
