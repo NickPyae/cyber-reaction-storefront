@@ -50,13 +50,25 @@ class ProfileMenu extends Component {
         route: "/profile/orders",
         label: "Orders",
         isSelected: asPath.includes("/profile/orders")
+      },
+      {
+        href: "/profile/rating",
+        route: "/profile/rating",
+        label: "Risk Rating",
+        isSelected: asPath.includes("/profile/rating")
+      },
+      {
+        href: "/profile/report",
+        route: "/profile/report",
+        label: "Risk Report",
+        isSelected: asPath.includes("/profile/report")
+      },
+      {
+        href: "/profile/claims",
+        route: "/profile/claims",
+        label: "Claims",
+        isSelected: asPath.includes("/profile/claims")
       }
-      // {
-      //   href: "/profile/payments",
-      //   route: "/profile/payments",
-      //   label: "Payment Methods",
-      //   isSelected: asPath === "/profile/payments"
-      // }
     ];
 
     return (
