@@ -113,7 +113,7 @@ class About extends Component {
                       </Grid>
                       <Grid item>
                         <Typography variant="h5" className={textColor}>
-                        Why we think this name is perfect for who we are and what we are trying to achieve
+                        Why we think this name is perfect
                         </Typography>
                       </Grid>
                       <Grid item>
