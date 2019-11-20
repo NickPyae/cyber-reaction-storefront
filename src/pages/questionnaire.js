@@ -30,7 +30,8 @@ class QuestionnairePage extends Component {
   };
 
   state = {
-    isLoading: true
+    isLoading: true,
+    isSurveyLoaded: false
   };
 
   componentDidMount() {
@@ -39,13 +40,19 @@ class QuestionnairePage extends Component {
         isLoading: false
       }));
     }, 2000);
+
+    setTimeout(() => {
+      this.setState(() => ({
+        isSurveyLoaded: true
+      }));
+    }, 4500);
   }
 
   renderQuestionnaire = () => (
     <Fragment>
       <div id="surveyhero-embed-557f1bd8">
         <Head>
-          <script src="https://embed-cdn.surveyhero.com/js/user/embed.557f1bd8.js" />
+          <script src="https://embed-cdn.surveyhero.com/js/user/embed.557f1bd8.js" type="text/javascript" />
         </Head>
       </div>
     </Fragment>
@@ -63,7 +70,7 @@ class QuestionnairePage extends Component {
           <meta name="description" content={shop && shop.description} />
         </Helmet>
         {this.renderQuestionnaire()}
-        <Questionnaire placement={classes.questionnaire} />
+        { this.state.isSurveyLoaded && <Questionnaire placement={classes.questionnaire} /> }
       </Fragment>
     );
   }

@@ -39,7 +39,7 @@ class ProfileMenu extends Component {
     const { classes, router: { asPath } } = this.props;
 
     const menuItems = [
-   {
+      {
         href: "/profile/address",
         route: "/profile/address",
         label: "Address Book",
