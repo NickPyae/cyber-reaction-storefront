@@ -68,6 +68,18 @@ class ProfileMenu extends Component {
         route: "/profile/claims",
         label: "Claims",
         isSelected: asPath.includes("/profile/claims")
+      },
+      {
+        href: "/profile/databreach",
+        route: "/profile/databreach",
+        label: "Data Breach",
+        isSelected: asPath.includes("/profile/databreach")
+      },
+      {
+        href: "/profile/regulatoryupdate",
+        route: "/profile/regulatoryupdate",
+        label: "Regulatory Update",
+        isSelected: asPath.includes("/profile/regulatoryupdate")
       }
     ];
 
