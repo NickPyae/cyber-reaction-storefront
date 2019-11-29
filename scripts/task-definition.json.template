@@ -100,7 +100,7 @@
         },
         {
           "name": "STRIPE_PUBLIC_API_KEY",
-          "value": "ENTER_STRIPE_PUBLIC_KEY_HERE"
+          "value": "pk_test_l9L6yjnvk4Vuy9q4YEtdPViY00AgjmCV60"
         }
         
       ],
