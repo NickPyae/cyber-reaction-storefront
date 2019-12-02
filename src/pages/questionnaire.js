@@ -39,13 +39,13 @@ class QuestionnairePage extends Component {
       this.setState(() => ({
         isLoading: false
       }));
-    }, 2000);
+    }, 5500);
 
     setTimeout(() => {
       this.setState(() => ({
         isSurveyLoaded: true
       }));
-    }, 4500);
+    }, 6000);
   }
 
   renderQuestionnaire = () => (

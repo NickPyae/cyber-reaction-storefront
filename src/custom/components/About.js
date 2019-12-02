@@ -64,7 +64,7 @@ class About extends Component {
           spacing={24}
         >
           <Grid item xs>
-            <img src="/static/images/pangolin.jpg" alt="pangolin" className={pangolinImage} />
+            <img src="/static/images/pangolin.jpeg" alt="pangolin" className={pangolinImage} />
           </Grid>
           <Grid item xs>
             <Card>

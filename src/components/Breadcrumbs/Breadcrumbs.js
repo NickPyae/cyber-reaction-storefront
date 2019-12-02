@@ -106,11 +106,13 @@ class Breadcrumbs extends Component {
   }
 
   render() {
-    const { classes: { container, breadcrumbLink } } = this.props;
+    const { classes: { container, breadcrumbIcon, breadcrumbLink } } = this.props;
 
     return (
       <div className={container}>
         <Link route="/"><span className={breadcrumbLink}>Home</span></Link>
+        <ChevronRight className={breadcrumbIcon} />
+        <Link route="/productGrid"><span className={breadcrumbLink}>Products</span></Link>
         {this.renderBreadcrumbs()}
       </div>
     );
