@@ -4,14 +4,15 @@ import { inject } from "mobx-react";
 import AppBar from "@material-ui/core/AppBar";
 import Hidden from "@material-ui/core/Hidden";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import HelpOutlineOutlinedIcon from "@material-ui/icons/HelpOutlineOutlined";
 import { NavigationDesktop } from "components/NavigationDesktop";
 import { NavigationMobile, NavigationToggleMobile } from "components/NavigationMobile";
 import AccountDropdown from "components/AccountDropdown";
-import ShopLogo from "@reactioncommerce/components/ShopLogo/v1";
+// import ShopLogo from "@reactioncommerce/components/ShopLogo/v1";
 import Link from "components/Link";
 import MiniCart from "components/MiniCart";
 
@@ -39,6 +40,12 @@ const styles = (theme) => ({
   },
   navItem: {
     fontSize: "1rem"
+  },
+  shopLogo: {
+    width: 180,
+    height: 100,
+    marginTop: 10,
+    marginLeft: -40
   }
 });
 
@@ -86,11 +93,25 @@ class Header extends Component {
             About
         <ExpandMoreIcon />
       </IconButton>
+      <IconButton className={navItem}>
+            Cyber Incident
+        <HelpOutlineOutlinedIcon />
+      </IconButton>
+      <IconButton className={navItem}>
+            Get Help
+      </IconButton>
     </Fragment>
   );
 
   render() {
-    const { classes: { appBar, controls, toolbar, title, navItem }, shop } = this.props;
+    const {
+      classes: {
+        appBar, controls, toolbar,
+        // title,
+        navItem, shopLogo
+      }
+      // shop
+    } = this.props;
 
     return (
       <AppBar position="static" elevation={0} className={appBar}>
@@ -100,11 +121,12 @@ class Header extends Component {
           </Hidden>
 
           <div className={controls}>
-            <Typography className={title} color="inherit" variant="h6">
-              <Link route="/">
-                <ShopLogo shopName={shop.name} />
-              </Link>
-            </Typography>
+            {/* <Typography className={title} color="inherit" variant="h6"> */}
+            <Link route="/">
+              {/* <ShopLogo shopName={shop.name} /> */}
+              <img src="/static/images/pangolin.jpeg" alt="pangolin" className={shopLogo} />
+            </Link>
+            {/* </Typography> */}
             <Hidden smDown initialWidth={"md"}>
               <NavigationDesktop />
             </Hidden>
