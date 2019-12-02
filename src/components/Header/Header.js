@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { inject } from "mobx-react";
 import AppBar from "@material-ui/core/AppBar";
@@ -6,12 +6,15 @@ import Hidden from "@material-ui/core/Hidden";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { NavigationDesktop } from "components/NavigationDesktop";
 import { NavigationMobile, NavigationToggleMobile } from "components/NavigationMobile";
 import AccountDropdown from "components/AccountDropdown";
 import ShopLogo from "@reactioncommerce/components/ShopLogo/v1";
 import Link from "components/Link";
 import MiniCart from "components/MiniCart";
+
 
 const styles = (theme) => ({
   appBar: {
@@ -33,6 +36,9 @@ const styles = (theme) => ({
     alignItems: "center",
     display: "flex",
     justifyContent: "space-between"
+  },
+  navItem: {
+    fontSize: "1rem"
   }
 });
 
@@ -58,8 +64,33 @@ class Header extends Component {
     this.props.uiStore.toggleMenuDrawerOpen();
   };
 
+  renderNavItems = (navItem) => (
+    <Fragment>
+      <IconButton className={navItem}>
+            Insurance
+        <ExpandMoreIcon />
+      </IconButton>
+      <IconButton className={navItem}>
+            Cyber Security
+        <ExpandMoreIcon />
+      </IconButton>
+      <IconButton className={navItem}>
+            Regulatory Notices
+        <ExpandMoreIcon />
+      </IconButton>
+      <IconButton className={navItem}>
+            Resources
+        <ExpandMoreIcon />
+      </IconButton>
+      <IconButton className={navItem}>
+            About
+        <ExpandMoreIcon />
+      </IconButton>
+    </Fragment>
+  );
+
   render() {
-    const { classes: { appBar, controls, toolbar, title }, shop } = this.props;
+    const { classes: { appBar, controls, toolbar, title, navItem }, shop } = this.props;
 
     return (
       <AppBar position="static" elevation={0} className={appBar}>
@@ -74,12 +105,11 @@ class Header extends Component {
                 <ShopLogo shopName={shop.name} />
               </Link>
             </Typography>
-
             <Hidden smDown initialWidth={"md"}>
               <NavigationDesktop />
             </Hidden>
           </div>
-
+          {this.renderNavItems(navItem)}
           <AccountDropdown />
           <MiniCart />
         </Toolbar>
