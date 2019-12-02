@@ -21,7 +21,8 @@ const styles = (theme) => ({
   appBar: {
     backgroundColor: theme.palette.reaction.white,
     borderBottom: `solid 1px ${theme.palette.reaction.black05}`,
-    color: theme.palette.reaction.coolGrey500
+    color: theme.palette.reaction.coolGrey500,
+    height: 60
   },
   controls: {
     alignItems: "inherit",
