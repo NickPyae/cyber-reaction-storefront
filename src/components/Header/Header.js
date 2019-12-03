@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { inject } from "mobx-react";
 import AppBar from "@material-ui/core/AppBar";
@@ -44,7 +44,7 @@ const styles = (theme) => ({
   },
   shopLogo: {
     width: 180,
-    height: 100,
+    height: 120,
     marginTop: 10,
     marginLeft: -40
   }
@@ -73,7 +73,7 @@ class Header extends Component {
   };
 
   renderNavItems = (navItem) => (
-    <Fragment>
+    <div>
       <IconButton className={navItem}>
             Insurance
         <ExpandMoreIcon />
@@ -87,7 +87,7 @@ class Header extends Component {
         <ExpandMoreIcon />
       </IconButton>
       <IconButton className={navItem}>
-            Resources
+            Regulatory Notices
         <ExpandMoreIcon />
       </IconButton>
       <IconButton className={navItem}>
@@ -101,7 +101,7 @@ class Header extends Component {
       <IconButton className={navItem}>
             Get Help
       </IconButton>
-    </Fragment>
+    </div>
   );
 
   render() {

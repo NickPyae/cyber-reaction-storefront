@@ -11,13 +11,18 @@ const styles = (theme) => ({
     display: "flex",
     justifyContent: "center",
     marginBottom: theme.spacing.unit * 2
+  },
+  footerSection: {
+    width: "100%",
+    height: "auto"
   }
 });
 
 const Footer = ({ ...props }) => (
   <footer className={props.classes.footer}>
     <Typography variant="caption">
-      &copy; {date.getFullYear()} { props.shop.name }
+      {/* &copy; {date.getFullYear()} { props.shop.name } */}
+      <img src="/static/images/footer-section.png" alt="footer-section" className={props.classes.footerSection} />
     </Typography>
   </footer>
 );
