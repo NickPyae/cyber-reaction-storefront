@@ -5,7 +5,7 @@ import { Router } from "routes";
 
 const Questionnaire = ({ placement }) => (
   <div className={placement}>
-    <Button actionType="important" onClick={() => Router.pushRoute("rating")}>Click here to check your rating</Button>
+    <Button actionType="important" onClick={() => Router.pushRoute("rating").then(() => window.scrollTo(0, 0))}>Click here to check your rating</Button>
   </div>
 );
 

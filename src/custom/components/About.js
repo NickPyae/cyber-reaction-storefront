@@ -17,7 +17,7 @@ class About extends Component {
       classes: PropTypes.object
     };
 
-    goToQuestionnaire = () => Router.pushRoute("questionnaire");
+    goToQuestionnaire = () => Router.pushRoute("questionnaire").then(() => window.scrollTo(0, 0));
 
     render() {
       const {

@@ -54,7 +54,7 @@ class Rating extends Component {
     classes: PropTypes.object
   };
 
-  goToProductGrid = () => Router.pushRoute("productGrid");
+  goToProductGrid = () => Router.pushRoute("productGrid").then(() => window.scrollTo(0, 0));
 
   render() {
     const {

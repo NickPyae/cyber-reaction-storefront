@@ -87,7 +87,7 @@ class Header extends Component {
     this.props.uiStore.toggleMenuDrawerOpen();
   };
 
-  goToProduts = () => Router.pushRoute("productGrid");
+  goToProduts = () => Router.pushRoute("productGrid").then(() => window.scrollTo(0, 0));
 
   renderNavItems = (sectionDesktop, navItem) => (
     <div className={sectionDesktop}>
