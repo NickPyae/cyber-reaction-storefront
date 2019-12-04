@@ -45,7 +45,7 @@ class QuestionnairePage extends Component {
       this.setState(() => ({
         isSurveyLoaded: true
       }));
-    }, 6000);
+    }, 7000);
   }
 
   renderQuestionnaire = () => (
