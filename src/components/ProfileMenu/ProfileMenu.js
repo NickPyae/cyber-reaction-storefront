@@ -52,32 +52,32 @@ class ProfileMenu extends Component {
         isSelected: asPath.includes("/profile/orders")
       },
       {
-        href: "/profile/rating",
-        route: "/profile/rating",
+        // href: "/profile/rating",
+        // route: "/profile/rating",
         label: "Risk Rating",
         isSelected: asPath.includes("/profile/rating")
       },
       {
-        href: "/profile/report",
-        route: "/profile/report",
+        // href: "/profile/report",
+        // route: "/profile/report",
         label: "Risk Report",
         isSelected: asPath.includes("/profile/report")
       },
       {
-        href: "/profile/claims",
-        route: "/profile/claims",
+        // href: "/profile/claims",
+        // route: "/profile/claims",
         label: "Claims",
         isSelected: asPath.includes("/profile/claims")
       },
       {
-        href: "/profile/databreach",
-        route: "/profile/databreach",
+        // href: "/profile/databreach",
+        // route: "/profile/databreach",
         label: "Data Breach",
         isSelected: asPath.includes("/profile/databreach")
       },
       {
-        href: "/profile/regulatoryupdate",
-        route: "/profile/regulatoryupdate",
+        // href: "/profile/regulatoryupdate",
+        // route: "/profile/regulatoryupdate",
         label: "Regulatory Update",
         isSelected: asPath.includes("/profile/regulatoryupdate")
       }

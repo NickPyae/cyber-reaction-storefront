@@ -39,14 +39,27 @@ const styles = (theme) => ({
     display: "flex",
     justifyContent: "space-between"
   },
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex"
+    }
+  },
   navItem: {
-    fontSize: "1rem"
+    fontSize: "1rem",
+    color: "inherit"
   },
   shopLogo: {
     width: 180,
     height: 120,
     marginTop: 10,
-    marginLeft: -40
+    marginLeft: -40,
+    outline: 0,
+    border: "none"
+  },
+  linkClick: {
+    outline: 0,
+    border: "none"
   }
 });
 
@@ -72,8 +85,8 @@ class Header extends Component {
     this.props.uiStore.toggleMenuDrawerOpen();
   };
 
-  renderNavItems = (navItem) => (
-    <div>
+  renderNavItems = (sectionDesktop, navItem) => (
+    <div className={sectionDesktop}>
       <IconButton className={navItem}>
             Insurance
         <ExpandMoreIcon />
@@ -108,6 +121,8 @@ class Header extends Component {
     const {
       classes: {
         appBar, controls, toolbar,
+        sectionDesktop,
+        linkClick,
         // title,
         navItem, shopLogo
       }
@@ -123,7 +138,7 @@ class Header extends Component {
 
           <div className={controls}>
             {/* <Typography className={title} color="inherit" variant="h6"> */}
-            <Link route="/">
+            <Link route="/" className={linkClick}>
               {/* <ShopLogo shopName={shop.name} /> */}
               <img src="/static/images/pangolin.jpeg" alt="pangolin" className={shopLogo} />
             </Link>
@@ -132,7 +147,7 @@ class Header extends Component {
               <NavigationDesktop />
             </Hidden>
           </div>
-          {this.renderNavItems(navItem)}
+          {this.renderNavItems(sectionDesktop, navItem)}
           <AccountDropdown />
           <MiniCart />
         </Toolbar>

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 
 const date = new Date();
 
@@ -20,10 +20,10 @@ const styles = (theme) => ({
 
 const Footer = ({ ...props }) => (
   <footer className={props.classes.footer}>
-    <Typography variant="caption">
-      {/* &copy; {date.getFullYear()} { props.shop.name } */}
-      <img src="/static/images/footer-section.png" alt="footer-section" className={props.classes.footerSection} />
-    </Typography>
+    {/* <Typography variant="caption"> */}
+    {/* &copy; {date.getFullYear()} { props.shop.name } */}
+    <img src="/static/images/footer-section.png" alt="footer-section" className={props.classes.footerSection} />
+    {/* </Typography> */}
   </footer>
 );
 
