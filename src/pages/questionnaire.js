@@ -39,20 +39,20 @@ class QuestionnairePage extends Component {
       this.setState(() => ({
         isLoading: false
       }));
-    }, 5500);
+    }, 5000);
 
     setTimeout(() => {
       this.setState(() => ({
         isSurveyLoaded: true
       }));
-    }, 7000);
+    }, 9000);
   }
 
   renderQuestionnaire = () => (
     <Fragment>
       <div id="surveyhero-embed-557f1bd8">
         <Head>
-          <script src="https://embed-cdn.surveyhero.com/js/user/embed.557f1bd8.js" type="text/javascript" />
+          <script src="https://embed-cdn.surveyhero.com/js/user/embed.557f1bd8.js" type="text/javascript" async/>
         </Head>
       </div>
     </Fragment>
