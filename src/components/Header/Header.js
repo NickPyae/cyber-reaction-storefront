@@ -8,13 +8,15 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import HelpOutlineOutlinedIcon from "@material-ui/icons/HelpOutlineOutlined";
+import StorefrontTwoToneIcon from "@material-ui/icons/StorefrontTwoTone";
+import HelpTwoToneIcon from "@material-ui/icons/HelpTwoTone";
 import { NavigationDesktop } from "components/NavigationDesktop";
 import { NavigationMobile, NavigationToggleMobile } from "components/NavigationMobile";
 import AccountDropdown from "components/AccountDropdown";
 // import ShopLogo from "@reactioncommerce/components/ShopLogo/v1";
 import Link from "components/Link";
 import MiniCart from "components/MiniCart";
+import { Router } from "routes";
 
 
 const styles = (theme) => ({
@@ -85,6 +87,8 @@ class Header extends Component {
     this.props.uiStore.toggleMenuDrawerOpen();
   };
 
+  goToProduts = () => Router.pushRoute("productGrid");
+
   renderNavItems = (sectionDesktop, navItem) => (
     <div className={sectionDesktop}>
       <IconButton className={navItem}>
@@ -109,10 +113,14 @@ class Header extends Component {
       </IconButton>
       <IconButton className={navItem}>
             Cyber Incident
-        <HelpOutlineOutlinedIcon />
+        <HelpTwoToneIcon />
       </IconButton>
       <IconButton className={navItem}>
             Get Help
+      </IconButton>
+      <IconButton className={navItem} onClick={this.goToProduts}>
+           Products
+        <StorefrontTwoToneIcon />
       </IconButton>
     </div>
   );
