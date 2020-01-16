@@ -25,7 +25,9 @@ USER node
 # Install ALL dependencies. We need devDependencies for the build command.
 RUN yarn install --production=false --frozen-lockfile --ignore-scripts --non-interactive --no-cache
 
+# Comment this line for local development and uncomment it before you commit and push your codes to codecommit
 ENV BUILD_ENV=production NODE_ENV=production
+
 RUN IS_BUILDING_NEXTJS=1 "$(npm bin)/next" build src
 
 # Install only prod dependencies now that we've built, to make the image smaller
@@ -36,7 +38,11 @@ RUN yarn install --production=true --frozen-lockfile --ignore-scripts --non-inte
 # If any Node flags are needed, they can be set in the NODE_OPTIONS env variable.
 CMD ["tini", "--", "node", "."]
 LABEL com.reactioncommerce.name="example-storefront"
-# Just for localhost development. Disable this line before pushing to CodeCommit.
+
+# Uncomment below line for localhost development. Comment below line before committing and pushing to CodeCommit.
+# You need to run this ENTRYPOINT once in order to create hydra-client on your local machine. 
+# Without runnig hydra-client, your storefront login will not work.
+# Once it is already created, you do not need to re-run this again.
 # ENTRYPOINT ["tini", "--", "./bin/start"] 
 
 

@@ -12,4 +12,9 @@ yarn build
 printf "Creating hydra client…"
 ./bin/wait-for.sh "${OAUTH2_HOST}:${OAUTH2_ADMIN_PORT}"
 ./bin/create-hydra-client.js
+
+# Enable this in line production. Uncomment it before you commit and push your codes to codecommit
 yarn start
+
+# Enable this line in local development. Comment it before you commit and push your codes to codecommit
+#yarn start:dev
